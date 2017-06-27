@@ -1,0 +1,46 @@
+<ion-view >
+  <ion-nav-title>
+    <h1 class="title">G LABS</h1>
+  </ion-nav-title>
+
+  <ion-content ng-controller="AppCtrl" >
+    <div class="button-bar" class="efeito">
+      <a class="button" > PEDIDO</a>
+      <a href="#/menu/Pesquisa" class="button  ">PESQUISA</a>
+    </div>
+
+
+<div class="campos" >
+
+    <label text-align="center">
+      <select class="ion-input-select--large"  ng-model="gravar.id"   >
+				<option ng-repeat="atividade in listAtividades"
+					value="{{atividade.descricao}}" style="background-color:white;">
+					  {{atividade.descricao}}
+				</option>
+			</select>
+    </label>
+
+    <label style="width:500px"class="item item-input">
+    <input type="DateTime-Local" placeholder="Hora de Inicio" ng-model="gravar.inicio"  id="inicio" >
+    </label>
+
+    <label style="width:500px" class="item item-input">
+    <input type="DateTime-Local" placeholder="Hora de Fim" ng-model="gravar.fim" id="fim">
+    </label>
+
+    <label style="width:500px" class="item item-input">
+    <input type="text" placeholder="Observação" ng-model="gravar.obs">
+    </label>
+  </div>
+<div class="gravar">
+   <button class="button button-block button-balanced" ng-click="myFunction()"> Novo </button>
+   <button class="button button-block button-positive" ng-click="insereLocal()"> Gravar </button>
+   <button class="button button-block btn-warning" ng-click="inserirDiario()"> Sincronização </button>
+</div>
+</ion-content>
+     <script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+
+</ion-view>
+</script>

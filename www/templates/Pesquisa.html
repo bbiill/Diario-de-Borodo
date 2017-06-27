@@ -1,0 +1,47 @@
+<ion-view>
+  <ion-nav-bar class="bar bar-positive">
+    <ion-nav-back-button>Novo</ion-nav-back-button> <!-- botao voltar na barra superior -->
+    <ion-nav-title>
+      <h1 class="title">Pesquisa</h1> <!-- titulo barra superior -->
+    </ion-nav-title>
+  </ion-nav-bar>
+  <ion-content ng-controller="AppCtrl">
+    <!--
+   <div class="item item-text-wrap">
+     <table class="table table-striped">
+                    <tr>
+                       <th style="width:150px"> Atividade </th>
+                       <th style="width:150px"> Hora Inicio </th>
+                       <th style="width:150px"> Hora Final </th>
+                        <th style="width:150px"> Obs</th>
+                       <th style="width:150px"> Opções</th>
+                    </tr>
+                    <tr ng-repeat="atividade in listaAtividades" >
+                       <td align="center">{{atividade.id}} </td>
+                       <td align="center">{{atividade.inicio }} </td>
+                       <td align="center">{{atividade.fim}} </td>
+                       <td align="center">{{atividade.obs}} </td>
+                       <td align="center"> <I class = "icon ion-android-delete" ng-click="removePedido(pedido.id_pedido)"> </i></td>
+                    </tr>
+
+    </table>
+   </div>
+    -->
+
+   <ion-list show-delete="showDelete">
+    <ion-item ng-repeat="atividade in listaAtividades" class="item-text-wrap">
+        <ion-delete-button class="ion-minus-circled" ng-click="deleteItemLocal(prod)">
+        </ion-delete-button>
+         Atividade: {{ atividade.id }}<br>
+         Inicio:{{ atividade.inicio| date:'dd/MM/yyyy HH:mm:ss'}} <br>
+         Fim: {{ atividade.fim| date:'dd/MM/yyyy HH:mm:ss'}} <br>
+         Obs: {{atividade.obs }}<br>
+      <ion-option-button class="button-assertive" ng-click="openModal(prod)">
+        Alterar
+      </ion-option-button>
+
+       </ion-item>
+</ion-list>
+
+</ion-content>
+</ion-view>

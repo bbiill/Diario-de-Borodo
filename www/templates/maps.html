@@ -1,0 +1,21 @@
+<ion-view view-title="G LABS">
+  <ion-content ng-controller="AppCtrl" ng-app="starter">
+
+    <label class="item item-input">
+      <input type="text" placeholder="Endereço de origem" ng-model="txtOrigem">
+    </label>
+
+
+  <label class="item item-input">
+      <input type="text" placeholder="Endereço de destino" ng-model="txtDestino">
+    </label>
+    <button class="button button-block" ng-click="CalculaDistancia()">
+      Calcula Distância
+    </button>
+
+    <div><span id="litResultado">&nbsp;</span></div>
+    <div style="padding: 10px 0 0; clear: both">
+      <iframe width="750" scrolling="no" height="350" frameborder="0" id="map" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?saddr=são paulo&daddr=rio de janeiro&output=embed"></iframe>
+    </div>
+  </ion-content>
+</ion-view>
